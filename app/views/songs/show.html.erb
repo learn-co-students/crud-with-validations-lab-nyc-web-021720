@@ -1,0 +1,15 @@
+<h1>Song</h1>
+
+<h3>Release Year</h3>
+<%= @song.release_year %>
+<h3>Artist</h3>
+<%= @song.artist_name ||= "No artist specified" %>
+<h3>Genre</h3>
+<%= @song.genre ||= "No genre specified" %>
+<br>
+<br>
+
+<%=link_to "edit", edit_song_path %> / <%=link_to "home",songs_path  %> / <%= link_to "delete", song_path(@song), method: :delete %> 
+
+<%=button_to "edit", edit_song_path(@song), method: :get%>  <%= button_to "delete", song_path(@song), method: :delete %> 
+
