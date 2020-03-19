@@ -1,0 +1,50 @@
+<h1>Songs</h1>
+
+<div><%= link_to 'Create Song', new_song_path %></div>
+<br>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  text-align: center;
+}
+tbody {
+  text-align: center;
+}
+</style>
+
+<table style="width: 50%">
+  <thead>
+  <%# table row %>
+    <tr>
+    <%# table header %>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Genre</th>
+      <th>Artist name</th>
+      <th>CRUD Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+      <%# table data cell %>
+        <td><%= song.title %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.genre %></td>
+        <td><%= song.artist_name %></td>
+        <td>
+          <%= link_to 'View', song %> |
+          <%= link_to 'Edit', edit_song_path(song) %> |
+          <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
