@@ -1,0 +1,18 @@
+<%= form_for(@song) do |fb| %>
+    <%= fb.label :title %>
+    <%= fb.text_field :title, value: @song.title %>
+
+    <%= fb.label :artist_name %>
+    <%= fb.text_field :artist_name, value: @song.artist_name %>
+
+    <%= fb.label :genre %>
+    <%= fb.text_field :genre, value: @song.genre %>
+
+    <%= fb.label :released %>
+    <%= fb.check_box :released, value: @song.released %>
+
+    <%= fb.label :release_year %>
+    <%= fb.text_field :release_year, value: @song.release_year %>
+
+    <%= fb.submit "Update Song" %>
+<% end %>
